@@ -1,6 +1,8 @@
 import os
 import msvcrt
-from controller.produto_controller import cadastrar, listar, buscar_por_id, atualizar_produto, deletar_produto
+from controller.produto_controller import ProdutoController
+
+produto = ProdutoController()
 
 class Interface:
     def cabeçalho(self, titulo):  
@@ -30,27 +32,27 @@ class Interface:
         match opcao:
             case "1":
                 self.cabeçalho("Página de cadastro de produto")
-                cadastrar()
+                produto.cadastrar()
                 self.voltar_para_main()
 
             case "2":
                 self.cabeçalho("Página de listagem de produtos")
-                listar()
+                produto.listar()
                 self.voltar_para_main()
 
             case "3":
                 self.cabeçalho("Página de busca de produto")
-                buscar_por_id()
+                produto.buscar_por_id()
                 self.voltar_para_main()
 
             case "4":
                 self.cabeçalho("Página de atualizar produto")
-                atualizar_produto()
+                produto.atualizar_produto()
                 self.voltar_para_main()
 
             case "5":
                 self.cabeçalho("Página de deletar produto")
-                deletar_produto()
+                produto.deletar_produto()
                 self.voltar_para_main()
 
             case "6":
